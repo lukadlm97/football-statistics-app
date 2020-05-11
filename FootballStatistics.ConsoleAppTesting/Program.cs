@@ -17,7 +17,7 @@ namespace FootballStatistics.ConsoleAppTesting
             IAuthenticationService authenticationService = new AuthenticationService(userDataService, new PasswordHasher());
 
 
-            Console.WriteLine(authenticationService.Register("asd@jida","asd","pass","pass").Result);
+            Console.WriteLine(authenticationService.Login("asd", "pass4").Result);
             Console.ReadKey();
         }
     }

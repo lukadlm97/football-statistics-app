@@ -1,4 +1,5 @@
-﻿using FootballStatistics.Domain.Models;
+﻿using FootballStatistics.Domain.Exceptions;
+using FootballStatistics.Domain.Models;
 using FootballStatistics.Domain.Models.Enum;
 using Microsoft.AspNet.Identity;
 using System;
@@ -19,9 +20,23 @@ namespace FootballStatistics.Domain.Services.AuthenticationService
             _passwordHasherService = passwordHasher;
         }
 
-        public Task<User> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
-            throw new NotImplementedException();
+            User storedUser = await _userDataService.GetByUsername(username);
+
+            if(storedUser == null)
+            {
+                throw new UserNotFoundException(username);
+            }
+
+            PasswordVerificationResult verificationResult = _passwordHasherService.VerifyHashedPassword(storedUser.HashedPassword, password);
+
+            if(verificationResult != PasswordVerificationResult.Success)
+            {
+                throw new InvalidPasswordException(username, password);
+            }
+
+            return storedUser;
         }
 
         public async Task<RegistrationResult> Register(string email, string username, string password, string confirmPassword)
