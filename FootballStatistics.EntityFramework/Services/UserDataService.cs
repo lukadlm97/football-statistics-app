@@ -51,6 +51,24 @@ namespace FootballStatistics.EntityFramework.Services
             }
         }
 
+        public async Task<User> GetByEmail(string email)
+        {
+            using(FootballStatisticsDbContext context = _context.CreateDbContext())
+            {
+                return await context.Users
+                    .FirstOrDefaultAsync(u => u.Email == email);
+            }
+        }
+
+        public async Task<User> GetByUsername(string username)
+        {
+            using(FootballStatisticsDbContext context = _context.CreateDbContext())
+            {
+                return await context.Users
+                    .FirstOrDefaultAsync(a => a.Username == username);
+            }
+        }
+
         public async Task<User> Update(int id, User entity)
         {
             return await _nonQueryDataService.Update(id, entity);

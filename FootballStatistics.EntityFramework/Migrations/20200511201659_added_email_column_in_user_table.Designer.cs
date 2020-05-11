@@ -3,14 +3,16 @@ using FootballStatistics.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FootballStatistics.EntityFramework.Migrations
 {
     [DbContext(typeof(FootballStatisticsDbContext))]
-    partial class FootballStatisticsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200511201659_added_email_column_in_user_table")]
+    partial class added_email_column_in_user_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
