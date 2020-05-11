@@ -55,8 +55,10 @@ namespace FootballStatistics.EntityFramework.Services
         {
             using(FootballStatisticsDbContext context = _context.CreateDbContext())
             {
-                return await context.Users
-                    .FirstOrDefaultAsync(u => u.Email == email);
+                User entity = await context.Users
+                    .FirstOrDefaultAsync(e => e.Email == email);
+
+                return entity;
             }
         }
 
@@ -64,8 +66,10 @@ namespace FootballStatistics.EntityFramework.Services
         {
             using(FootballStatisticsDbContext context = _context.CreateDbContext())
             {
-                return await context.Users
-                    .FirstOrDefaultAsync(a => a.Username == username);
+                User entity = await context.Users
+                    .FirstOrDefaultAsync(e => e.Username == username);
+
+                return entity;
             }
         }
 

@@ -1,7 +1,9 @@
 ﻿using FootballStatistics.Domain.Models;
 using FootballStatistics.Domain.Services;
+using FootballStatistics.Domain.Services.AuthenticationService;
 using FootballStatistics.EntityFramework;
 using FootballStatistics.EntityFramework.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 
@@ -12,9 +14,10 @@ namespace FootballStatistics.ConsoleAppTesting
         static void Main(string[] args)
         {
             IDataService<User> userDataService = new UserDataService(new FootballStatisticsDbContextFactory());
+            IAuthenticationService authenticationService = new AuthenticationService(userDataService, new PasswordHasher());
 
-            Console.WriteLine(userDataService.Get(1).Result);
 
+            Console.WriteLine(authenticationService.Register("asd@jida","asd","pass","pass").Result);
             Console.ReadKey();
         }
     }
