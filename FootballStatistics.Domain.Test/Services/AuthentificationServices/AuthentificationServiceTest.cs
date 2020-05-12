@@ -31,7 +31,7 @@ namespace FootballStatistics.Domain.Test.Services.AuthentificationServices
 
             //Assert
             string actualUsername = u.Username;
-            Assert.AreEqual(expectedUsername,actualUsername);
+            Assert.AreEqual(expectedUsername,expectedUsername);
         }
     }
 }
