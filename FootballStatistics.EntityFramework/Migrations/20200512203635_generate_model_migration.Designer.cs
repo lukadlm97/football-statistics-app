@@ -4,14 +4,16 @@ using FootballStatistics.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FootballStatistics.EntityFramework.Migrations
 {
     [DbContext(typeof(FootballStatisticsDbContext))]
-    partial class FootballStatisticsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200512203635_generate_model_migration")]
+    partial class generate_model_migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
