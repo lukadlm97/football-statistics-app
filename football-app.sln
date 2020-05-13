@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballStatistics.EntityFr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballStatistics.ConsoleAppTesting", "FootballStatistics.ConsoleAppTesting\FootballStatistics.ConsoleAppTesting.csproj", "{4E1B3C2C-11AF-46C3-8C94-6A112C73D81C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballStatistics.Domain.Test", "FootballStatistics.Domain.Test\FootballStatistics.Domain.Test.csproj", "{16F42553-71B1-41CB-AA6C-1E584D002A31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballStatistics.WPF", "FootballStatistics.WPF\FootballStatistics.WPF.csproj", "{883CD02E-8EAC-49D9-8C16-27D42BC95901}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{4E1B3C2C-11AF-46C3-8C94-6A112C73D81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E1B3C2C-11AF-46C3-8C94-6A112C73D81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E1B3C2C-11AF-46C3-8C94-6A112C73D81C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{16F42553-71B1-41CB-AA6C-1E584D002A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{16F42553-71B1-41CB-AA6C-1E584D002A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{16F42553-71B1-41CB-AA6C-1E584D002A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{16F42553-71B1-41CB-AA6C-1E584D002A31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883CD02E-8EAC-49D9-8C16-27D42BC95901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883CD02E-8EAC-49D9-8C16-27D42BC95901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883CD02E-8EAC-49D9-8C16-27D42BC95901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883CD02E-8EAC-49D9-8C16-27D42BC95901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
