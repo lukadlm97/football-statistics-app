@@ -4,6 +4,9 @@ using FootballStatistics.Domain.Services.AuthenticationService;
 using FootballStatistics.EntityFramework;
 using FootballStatistics.EntityFramework.Services;
 using FootballStatistics.WPF.Authenticators;
+using FootballStatistics.WPF.State.Navigators;
+using FootballStatistics.WPF.ViewModels;
+using FootballStatistics.WPF.ViewModels.Factories;
 using Microsoft.AspNet.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,8 +24,21 @@ namespace FootballStatistics.WPF
     /// </summary>
     public partial class App : Application
     {
-    }
-    private IServiceProvider CreateServiceProvider()
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            IServiceProvider serviceProvider = CreateServiceProvider();
+
+            Window window = serviceProvider.GetRequiredService<MainWindow>();
+            window.Show();
+        
+
+
+            base.OnStartup(e);
+        }
+
+
+        private IServiceProvider CreateServiceProvider()
     {
         IServiceCollection services = new ServiceCollection();
 
@@ -30,6 +46,9 @@ namespace FootballStatistics.WPF
         services.AddSingleton<IAuthenticationService, AuthenticationService>();
         services.AddSingleton<IDataService<User>, UserDataService>();
         services.AddSingleton<IPasswordHasher, PasswordHasher>();
+         services.AddSingleton<INavigator, Navigator>();
+         services.AddSingleton<IRootFootballStatisticViewModelFactory, RootFootballStatisticViewModelFactory>();
+         services.AddSingleton<IFootballStatisticViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
 
         services.AddScoped<IAuthenticator, Authenticator>();
         services.AddScoped<MainViewModel>();
@@ -38,5 +57,6 @@ namespace FootballStatistics.WPF
 
         return services.BuildServiceProvider();
 
+    }
     }
 }
