@@ -17,7 +17,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Username"/>
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="Password"/>
         <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"/>
 

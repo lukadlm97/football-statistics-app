@@ -7,14 +7,14 @@ using System.Windows.Input;
 
 namespace FootballStatistics.WPF.Commands
 {
-    public class UpdateCuurentViewModelCommand : ICommand
+    public class UpdateCurentViewModelCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
         private readonly INavigator _navigator;
         private readonly IRootFootballStatisticViewModelFactory _viewModelFactory;
 
-        public UpdateCuurentViewModelCommand(INavigator navigator,IRootFootballStatisticViewModelFactory viewModelFactory)
+        public UpdateCurentViewModelCommand(INavigator navigator,IRootFootballStatisticViewModelFactory viewModelFactory)
         {
             _navigator = navigator;
             _viewModelFactory = viewModelFactory;

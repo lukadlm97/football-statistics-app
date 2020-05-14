@@ -28,7 +28,7 @@ namespace FootballStatistics.WPF.State.Navigators
         public ICommand UpdateCurrentViewModelCommand { get; set; }
         public Navigator(IRootFootballStatisticViewModelFactory viewModelFactory)
         {
-            UpdateCurrentViewModelCommand = new UpdateCuurentViewModelCommand(this,viewModelFactory);
+            UpdateCurrentViewModelCommand = new UpdateCurentViewModelCommand(this,viewModelFactory);
         }
     }
 }

@@ -31,32 +31,30 @@ namespace FootballStatistics.WPF
 
             Window window = serviceProvider.GetRequiredService<MainWindow>();
             window.Show();
-        
-
-
+       
             base.OnStartup(e);
         }
 
 
         private IServiceProvider CreateServiceProvider()
-    {
-        IServiceCollection services = new ServiceCollection();
+        {
+            IServiceCollection services = new ServiceCollection();
 
-        services.AddSingleton<FootballStatisticsDbContextFactory>();
-        services.AddSingleton<IAuthenticationService, AuthenticationService>();
-        services.AddSingleton<IDataService<User>, UserDataService>();
-        services.AddSingleton<IPasswordHasher, PasswordHasher>();
-         services.AddSingleton<INavigator, Navigator>();
-         services.AddSingleton<IRootFootballStatisticViewModelFactory, RootFootballStatisticViewModelFactory>();
-         services.AddSingleton<IFootballStatisticViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
+            services.AddSingleton<FootballStatisticsDbContextFactory>();
+            services.AddSingleton<IAuthenticationService, AuthenticationService>();
+            services.AddSingleton<IDataService<User>, UserDataService>();
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
+             services.AddSingleton<INavigator, Navigator>();
+             services.AddSingleton<IRootFootballStatisticViewModelFactory, RootFootballStatisticViewModelFactory>();
+             services.AddSingleton<IFootballStatisticViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
+           
+            services.AddScoped<IAuthenticator, Authenticator>();
+            services.AddScoped<MainViewModel>();
 
-        services.AddScoped<IAuthenticator, Authenticator>();
-        services.AddScoped<MainViewModel>();
+            services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
 
-        services.AddScoped<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
+            return services.BuildServiceProvider();
 
-        return services.BuildServiceProvider();
-
-    }
+        }
     }
 }

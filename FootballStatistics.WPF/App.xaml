@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FootballStatistics.WPF"
-            >
+             xmlns:viewmodels="clr-namespace:FootballStatistics.WPF.ViewModels"
+             xmlns:views="clr-namespace:FootballStatistics.WPF.View"
+             >
     <Application.Resources>
-         
+        <ResourceDictionary>
+            
+            
+            <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                <views:LoginView LoginCommand="{Binding LoginCommand}" />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
