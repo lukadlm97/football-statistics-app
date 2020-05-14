@@ -28,6 +28,7 @@ namespace FootballStatistics.WPF.Commands
         public async void Execute(object parameter)
         {
             bool success = await _authenticator.Login(_loginViewModel.Username,parameter.ToString());
+           
         }
     }
 }

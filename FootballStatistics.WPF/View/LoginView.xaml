@@ -16,13 +16,19 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Username"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Password"/>
-        <PasswordBox x:Name="pbPassword" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel Margin="5" Background="Bisque" VerticalAlignment="Center">
+            
+        <TextBlock Grid.Row="0" Padding="5" Margin="5" Grid.Column="0" Text="Username"/>
+        <TextBox Grid.Row="0" Padding="2" Margin="2" Grid.Column="1" Text="{Binding Username,UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Padding="5" Margin="5" Text="Password"/>
+        <PasswordBox x:Name="pbPassword" Padding="2" Margin="2" Grid.Row="1" Grid.Column="1"/>
 
-        <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center"
+            <Button Grid.Column="2" Grid.Row="2"  Margin="10" HorizontalAlignment="Center"
                 Content="Login"
                 Click="Login_Click"/>
+            <Button Grid.Column="2" Grid.Row="3"  Margin="10" HorizontalAlignment="Center"
+                Content="Sign In"
+                Click="SignIn_Click"/>
+        </StackPanel>
     </Grid>
 </UserControl>
