@@ -32,5 +32,60 @@
                 Click="SignIn_Click"/>
                 
         </StackPanel>
+        <StackPanel Name="reg_panel" Visibility="Visible" Grid.Row="0" Grid.Column="1" Width="400" Margin="5">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="Gray" Offset="0" />
+                    <GradientStop Color="#ffecd2" Offset="0.454" />
+                    <GradientStop Color="#fcb69f" Offset="0.0" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Grid Margin="15" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <TextBlock FontSize="18" FontWeight="Bold" FontStyle="Italic" Text="Registration Form"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+   
+                <TextBlock Padding="5" Margin="5" Text="Username"/>
+                 <TextBox  Width="100" Height="20" HorizontalAlignment="Right" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Padding="5" Margin="5" Text="Email"/>
+                    <TextBox HorizontalAlignment="Right" Width="100" Height="20" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Padding="5" Margin="5" Text="Password"/>
+                    <TextBox HorizontalAlignment="Right" Width="100" Height="20" />
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Padding="5" Margin="5" Text="Confirm"/>
+                    <TextBox HorizontalAlignment="Right" Width="100" Height="20" />
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock Padding="5" Margin="5" Text="Role"/>
+                    <ComboBox Margin="10">
+                        
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal">
+                    <Button Content="Confirm Account"/>
+                    <Button Background="Red" Content="Cancel" />
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
     </Grid>
 </UserControl>

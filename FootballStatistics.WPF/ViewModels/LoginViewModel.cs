@@ -10,6 +10,7 @@ namespace FootballStatistics.WPF.ViewModels
     public class LoginViewModel:ViewModelBase
     {
         private string _username { get; set; }
+       
 
         public string Username
         {

@@ -51,9 +51,13 @@ namespace FootballStatistics.WPF.View
        
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            if(CurrentViewModelCommand != null)
+            if(reg_panel.Visibility == Visibility.Hidden)
             {
-                CurrentViewModelCommand.Execute(ViewType.Home);
+                reg_panel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                reg_panel.Visibility = Visibility.Hidden;
             }
         }
     }
