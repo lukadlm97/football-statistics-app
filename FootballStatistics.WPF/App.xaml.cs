@@ -48,6 +48,7 @@ namespace FootballStatistics.WPF
              services.AddSingleton<IRootFootballStatisticViewModelFactory, RootFootballStatisticViewModelFactory>();
              services.AddSingleton<IFootballStatisticViewModelFactory<LoginViewModel>, LoginViewModelFactory>();
            
+           
             services.AddScoped<IAuthenticator, Authenticator>();
             services.AddScoped<MainViewModel>();
 
