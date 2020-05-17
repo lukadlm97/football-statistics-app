@@ -1,6 +1,8 @@
-﻿using FootballStatistics.WPF.State.Navigators;
+﻿using FootballStatistics.Domain.Models.Enum;
+using FootballStatistics.WPF.State.Navigators;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,6 +40,7 @@ namespace FootballStatistics.WPF.View
         public LoginView()
         {
             InitializeComponent();
+            cmbUserRole.ItemsSource = Enum.GetValues(typeof(UserRoles)).Cast<UserRoles>();      
         }
 
         private void Login_Click(object sender,RoutedEventArgs e)
