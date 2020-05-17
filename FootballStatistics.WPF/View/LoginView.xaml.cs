@@ -4,6 +4,7 @@ using FootballStatistics.WPF.Authenticators;
 using FootballStatistics.WPF.Commands;
 using FootballStatistics.WPF.State.Navigators;
 using FootballStatistics.WPF.ViewModels;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,15 @@ namespace FootballStatistics.WPF.View
             get { return (ICommand)GetValue(LoginCommandProperty); }
             set { SetValue(LoginCommandProperty, value); }
         }
+        public ICommand RegisterCommand
+        {
+            get;
+            internal set;
+        }
+        private void CreateRegisterCommand()
+        {
+        
+        }
        
         public LoginView()
         {
@@ -66,7 +76,6 @@ namespace FootballStatistics.WPF.View
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            ICommand command = new RegisterCommand(new LoginViewModel(new Authenticator()),new Authenticator());
         }
     }
 }
