@@ -1,5 +1,9 @@
 ﻿using FootballStatistics.Domain.Models.Enum;
+using FootballStatistics.Domain.Services.AuthenticationService;
+using FootballStatistics.WPF.Authenticators;
+using FootballStatistics.WPF.Commands;
 using FootballStatistics.WPF.State.Navigators;
+using FootballStatistics.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,19 +28,15 @@ namespace FootballStatistics.WPF.View
         public static readonly DependencyProperty LoginCommandProperty =
             DependencyProperty.Register("LoginCommand", typeof(ICommand), typeof(LoginView), new PropertyMetadata(null));
 
-        public static readonly DependencyProperty CurrentViewModelCommandProperty =
-            DependencyProperty.Register("CurrentViewModelCommand", typeof(ICommand), typeof(HomeView), new PropertyMetadata(null));
+        
+       
+
         public ICommand LoginCommand
         {
             get { return (ICommand)GetValue(LoginCommandProperty); }
             set { SetValue(LoginCommandProperty, value); }
         }
-        public ICommand CurrentViewModelCommand
-        {
-            get { return (ICommand)GetValue(CurrentViewModelCommandProperty); }
-            set { SetValue(CurrentViewModelCommandProperty, value); }
-        }
-
+       
         public LoginView()
         {
             InitializeComponent();
@@ -62,6 +62,11 @@ namespace FootballStatistics.WPF.View
             {
                 reg_panel.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            ICommand command = new RegisterCommand(new LoginViewModel(new Authenticator()),new Authenticator());
         }
     }
 }

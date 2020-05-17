@@ -81,7 +81,7 @@
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal">
-                    <Button Content="Confirm Account"/>
+                    <Button Content="Confirm Account" Click="Register_Click"/>
                     <Button Background="Red" Content="Cancel" Click="SignIn_Click" />
                 </StackPanel>
             </Grid>

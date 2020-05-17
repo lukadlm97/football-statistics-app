@@ -97,10 +97,12 @@ namespace FootballStatistics.WPF.ViewModels
 
 
         public ICommand LoginCommand { get; }
+        public ICommand RegisterCommand { get; }
 
         public LoginViewModel(IAuthenticator authenticator)
         {
             LoginCommand = new LoginCommand(this, authenticator);
+            RegisterCommand = new RegisterCommand(this, authenticator);
         }
 
     }
